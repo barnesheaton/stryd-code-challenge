@@ -86,20 +86,6 @@ export default class Component extends React.Component {
           this.state.negativeComments.length ||
           this.state.positiveComments.length) &&
           this.rendeResults()}
-        <ReactMarkdown
-          source={`
-          ${"```"}
-          js
-          var React = require('react');
-          var Markdown = require('react-markdown');
-
-          React.render(
-            <Markdown source="# Your markdown here" />,
-            document.getElementById('content')
-          );
-          ${"```"}
-          `}
-        />
       </div>
     );
   }
