@@ -22,15 +22,10 @@
   margin: 10px;
 }
 
-.comments-total {
-  margin-left: 16px;
-  display: flex;
-  flex-direction: row;
-}
-
 .container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #282c34;
+  overflow-y: scroll;
 }
 
 .header {
@@ -50,15 +45,19 @@
   border: solid thin white;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .results {
   display: flex;
   flex-direction: row;
 }
 
 .section-header {
+  padding: 20px;
   line-height: 20px;
-  margin-bottom: 0px;
-  margin-left: 16px;
   color: white;
   font-size: 20px;
 }

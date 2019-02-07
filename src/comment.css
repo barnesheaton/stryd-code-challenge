@@ -5,7 +5,19 @@
   margin: 10px;
 }
 
+.comment-header {
+  font-size: 15px;
+  line-height: 15px;
+  color: black
+}
+
+.blue {
+  color: blue;
+}
+
 .comment-text {
+  font-size: 12px;
+  line-height: 12px;
   color: black
 }
 
