@@ -25,21 +25,30 @@ export default class Comment extends React.Component {
   }
 
   revealTerms() {
-    let comment = this.props.comment.text;
     const { positive, negative } = this.props.comment.analysis;
+    const keywords = this.props.comment.keywords;
+    let comment = this.props.comment.text;
+
+    keywords.map(term => {
+      comment = comment.replace(
+        new RegExp(`\\b${term}\\b`, "ig"),
+        string =>
+          `<span class="text-highlighted text-blue">` + string + "</span>"
+      );
+    });
 
     positive.map(term => {
-      var regEx = new RegExp(`\\b${term}\\b`, "ig");
       comment = comment.replace(
-        regEx,
-        string => `<span class="positive-text">` + string + "</span>"
+        new RegExp(`\\b${term}\\b`, "ig"),
+        string =>
+          `<span class="text-highlighted text-green">` + string + "</span>"
       );
     });
     negative.map(term => {
-      var regEx = new RegExp(`\\b${term}\\b`, "ig");
       comment = comment.replace(
-        regEx,
-        string => `<span class="negative-text">` + string + "</span>"
+        new RegExp(`\\b${term}\\b`, "ig"),
+        string =>
+          `<span class="text-highlighted text-red">` + string + "</span>"
       );
     });
 

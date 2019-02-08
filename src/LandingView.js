@@ -13,7 +13,7 @@ export default class Component extends React.Component {
     negativeComments: [],
     positiveComments: [],
     results: [],
-    revealTerms: true,
+    revealTerms: false,
     searchTime: null,
     value: ""
   };
@@ -72,7 +72,7 @@ export default class Component extends React.Component {
                   this.setState({ revealTerms: !this.state.revealTerms })
                 }
               >
-                Show Sentiment Words
+                Toggle Key Words
               </button>
             </div>
             {this.state.searchTime && (
@@ -148,23 +148,23 @@ export default class Component extends React.Component {
           switch (true) {
             case analysis.score >= 2:
               positiveComments.push({
-                text: comments[comment.id],
                 analysis,
-                id: comment.id
+                keywords,
+                text: comments[comment.id]
               });
               break;
             case analysis.score <= -2:
               negativeComments.push({
-                text: comments[comment.id],
                 analysis,
-                id: comment.id
+                keywords,
+                text: comments[comment.id]
               });
               break;
             default:
               neutralComments.push({
-                text: comments[comment.id],
                 analysis,
-                id: comment.id
+                keywords,
+                text: comments[comment.id]
               });
           }
         });
