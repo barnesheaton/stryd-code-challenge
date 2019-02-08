@@ -82,15 +82,15 @@ export default class Component extends React.Component {
             )}
           </div>
         </header>
-        {(this.state.neutralComments.length ||
-          this.state.negativeComments.length ||
-          this.state.positiveComments.length) &&
-          this.rendeResults()}
+        {(!!this.state.neutralComments.length ||
+          !!this.state.negativeComments.length ||
+          !!this.state.positiveComments.length) &&
+          this.renderResults()}
       </div>
     );
   }
 
-  rendeResults() {
+  renderResults() {
     const sections = [
       { title: "Positive", stateKey: "positiveComments" },
       { title: "Neutral", stateKey: "neutralComments" },
