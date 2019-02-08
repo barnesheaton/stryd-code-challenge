@@ -66,6 +66,9 @@ comments.filter(comment => {
   }
 })
 ```
+This `comment[keywords[i][0]]` checks if there's even a word that starts with the same letter as the search term in the comment.
+If not, that allows us to avoid executing the `includes()` method and hopefully save some time
+
 And I used the [Sentiment](https://github.com/thisandagain/sentiment) package to calculate the "feeling" of each comment
 
 ```       
