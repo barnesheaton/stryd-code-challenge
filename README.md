@@ -52,7 +52,7 @@ Converts the array of comments into the following data structure
 ```
 
 ### Searching
-To search I frist get the keywords from the text input
+To search I first get the keywords from the text input
 ```
 const keywords = this.state.value.replace(/ /, "").split(",");
 ```
@@ -81,7 +81,6 @@ comments.map(comment => {
        break;
     default:
        neutralComments.push(comment);
-         
     }
   });
 ```
