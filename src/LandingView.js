@@ -129,7 +129,10 @@ export default class Component extends React.Component {
       let positiveComments = [];
       let neutralComments = [];
       let negativeComments = [];
-      const keywords = this.state.value.replace(/ /, "").split(",");
+      const keywords = this.state.value
+        .replace(/ /, "")
+        .replace(/^\W+|\W+$/g, "")
+        .split(",");
       this.state.comments
         .filter(comment => {
           for (var i = 0; i < keywords.length; i++) {
